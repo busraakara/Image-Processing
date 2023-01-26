@@ -33,9 +33,9 @@ genislik=img.shape[1]
 yukseklik=img.shape[0] 
 
 
-sobel_filtre_x = np.zeros(shape=(genislik, yukseklik))
-sobel_filtre_y = np.zeros(shape=(genislik, yukseklik))
-sobel_filtre = np.zeros(shape=(genislik, yukseklik))
+sobel_filtre_x = np.zeros(shape=(yukseklik, genislik))
+sobel_filtre_y = np.zeros(shape=(yukseklik, genislik))
+sobel_filtre = np.zeros(shape=(yukseklik, genislik))
 
 
 #Yatayda kenar bulma
