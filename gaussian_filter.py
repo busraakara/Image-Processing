@@ -23,7 +23,7 @@ kernel = [[1/16, 1/8, 1/16],
           [1/8, 1/4, 1/8],
           [1/16, 1/8, 1/16]]
 
-gaussian_filtre = np.zeros(shape=(genislik, yukseklik))
+gaussian_filtre = np.zeros(shape=(yukseklik, genislik))
 
 for i in range (0,yukseklik-2):
     for j in range (0,genislik-2):
