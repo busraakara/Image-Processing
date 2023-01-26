@@ -23,7 +23,7 @@ kernel2= [[0, 1, 0],
           [1, -4, 1],
           [0, 1, 0]]
 
-laplacian_filtre = np.zeros(shape=(genislik, yukseklik))
+laplacian_filtre = np.zeros(shape=(yukseklik, genislik))
 
 for i in range (0,yukseklik-2):
     for j in range (0,genislik-2):
