@@ -20,7 +20,7 @@ print(img.shape)
 genislik=img.shape[1]
 yukseklik=img.shape[0] 
 
-median_filtre = np.zeros(shape=(genislik, yukseklik))
+median_filtre = np.zeros(shape=(yukseklik, genislik))
 
 #burda 3x3 kaydırma ile matrisdeki değerleri listeye ekleyip küçükten büyüğe sıraladıktan sonra ortadaki değeri median_filtreye atıyoruz.
 for i in range (0,yukseklik-2):
