@@ -27,10 +27,8 @@ laplacian_filtre = np.zeros(shape=(yukseklik, genislik))
 
 for i in range (0,yukseklik-2):
     for j in range (0,genislik-2):
-        a = img[i][j]*kernel[0][0] + img[i][j+1]*kernel[0][1] + img[i][j+2]*kernel[0][2]
-        b=img[i+1][j]*kernel[1][0] + img[i+1][j+1]*kernel[1][1] + img[i+1][j+2]*kernel[1][2]
-        c=img[i+2][j]*kernel[2][0] + img[i+2][j+1]*kernel[2][1] + img[i+2][j+2]*kernel[2][2]
-        d=a+b+c
+        block = img[i:i+3 , j:j+3]
+        d = np.sum(np.multiply(block,kernel1))
         if(d<0):
             d=0
         elif(d>255):
