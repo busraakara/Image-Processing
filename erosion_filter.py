@@ -12,11 +12,8 @@ cv2.imshow("Gray image", img)
 
 #erezyon uygulamadan önce resme treshold uyguluyoruz.
 ot=cv2.threshold(img,0,255,cv2.THRESH_OTSU)
-otsu=ot[1]
+otsu1=ot[1]
 cv2.imshow("opencv otsu" , ot[1])
-
-
-print(img.shape)
 
 
 #opencv kütüphanesindeki metod ile yazdığımız algoritmayı karşılaştırmak için
@@ -33,9 +30,12 @@ kernel=[[1,1,1],
         [1,1,1]]
 
 erosion_filtre = np.zeros(shape=(yukseklik, genislik))
+#zero padding
+otsu = np.zeros((yukseklik+2,genislik+2))
+otsu[1:yukseklik+1 , 1: genislik+1] = img
 
-for i in range (0,yukseklik-2):
-    for j in range (0,genislik-2):
+for i in range (0,yukseklik):
+    for j in range (0,genislik):
         liste=[]
         liste.append(otsu[i][j]*kernel[0][0]) 
         liste.append(otsu[i][j+1]*kernel[0][1])
@@ -54,7 +54,7 @@ for i in range (0,yukseklik-2):
             elif (k == 0):
                 a=0
                 break
-        erosion_filtre[i+1][j+1]=a
+        erosion_filtre[i][j]=a
             
 erosion_fitre=np.uint8(erosion_filtre)                      
 cv2.imshow("erozyon uygulanmis resim",erosion_filtre)  
