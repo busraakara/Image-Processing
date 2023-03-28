@@ -62,9 +62,7 @@ sharpening_filter=np.zeros((height0,width0))
 for i in range(height0):
     for j in range(width0):
         sharpening_filter[i][j] = img[i][j] + laplacian_filter[i][j]
-        if sharpening_filter[i][j] < 0:
-            sharpening_filter[i][j] = 0
-        elif sharpening_filter[i][j] > 255:
+        if sharpening_filter[i][j] > 255:
             sharpening_filter[i][j] = 255
 sharpening_filter = np.uint8(sharpening_filter)      
       
